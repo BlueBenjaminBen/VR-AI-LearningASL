@@ -1,2 +1,0 @@
-Library/ArtifactDB filter=lfs diff=lfs merge=lfs -text
-Library/Artifacts/40/40a6a330a5899ce4241a8c45192f6996 filter=lfs diff=lfs merge=lfs -text
