@@ -1,9 +1,16 @@
 using UnityEngine.Events;
 using UnityEngine.UI;
 using UnityEngine.XR.Hands.Gestures;
+using TMPro;
 
 namespace UnityEngine.XR.Hands.Samples.GestureSample
 {
+    /// <summary>
+    /// Allows for the concatenation of sign to text
+    /// </summary>
+    [System.Serializable]
+    public class InputFieldEvent : UnityEvent<TMP_InputField, string> { }
+        
     /// <summary>
     /// A gesture that detects when a hand is held in a static shape and orientation for a minimum amount of time.
     /// </summary>
@@ -27,7 +34,16 @@ namespace UnityEngine.XR.Hands.Samples.GestureSample
 
         [SerializeField]
         [Tooltip("The event fired when the gesture is performed.")]
-        UnityEvent m_GesturePerformed;
+        InputFieldEvent m_GesturePerformed;
+
+        [SerializeField]
+        [Tooltip("The TMP_InputField to append text to.")]
+        TMP_InputField m_InputField;
+
+
+        [SerializeField]
+        [Tooltip("The text to append when the gesture is performed.")]
+        string m_TextToAppend;
 
         [SerializeField]
         [Tooltip("The event fired when the gesture is ended.")]
@@ -108,7 +124,7 @@ namespace UnityEngine.XR.Hands.Samples.GestureSample
         /// <summary>
         /// The event fired when the gesture is performed.
         /// </summary>
-        public UnityEvent gesturePerformed
+        public InputFieldEvent gesturePerformed
         {
             get => m_GesturePerformed;
             set => m_GesturePerformed = value;
@@ -204,7 +220,7 @@ namespace UnityEngine.XR.Hands.Samples.GestureSample
                 var holdTimer = Time.timeSinceLevelLoad - m_HoldStartTime;
                 if (holdTimer > m_MinimumHoldTime)
                 {
-                    m_GesturePerformed?.Invoke();
+                    m_GesturePerformed?.Invoke(m_InputField, m_TextToAppend);
                     m_PerformedTriggered = true;
                     //m_Background.color = m_BackgroundHighlightColor;
 
@@ -216,10 +232,18 @@ namespace UnityEngine.XR.Hands.Samples.GestureSample
                         if (gesture != this)
                             gesture.highlightVisible = false;
                     }
+
                 }
             }
 
             m_TimeOfLastConditionCheck = Time.timeSinceLevelLoad;
+        }
+        public void AppendToInputField(TMP_InputField inputField, string text)
+        {
+            if (inputField != null)
+            {
+                inputField.text += text;
+            }
         }
     }
 }
