@@ -13,6 +13,6 @@ public class HandButtonClick : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        button.targetGraphic.color = button.colors.highlightedColor;
+        button.targetGraphic.color = button.colors.normalColor;
     }
 }
