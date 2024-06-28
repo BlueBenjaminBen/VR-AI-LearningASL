@@ -801,11 +801,6 @@ MonoBehaviour:
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
---- !u!137 &534501555 stripped
-SkinnedMeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 1362226472546382020, guid: dbeb5a30189cf06408df6cf51956b6be, type: 3}
-  m_PrefabInstance: {fileID: 534501552}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &534501556 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2262622401953236584, guid: dbeb5a30189cf06408df6cf51956b6be, type: 3}
@@ -1784,7 +1779,7 @@ MonoBehaviour:
   STT: {fileID: 1114645148}
   avatar: {fileID: 1087299444}
   audioSource: {fileID: 1087299447}
-  SMR: {fileID: 534501555}
+  SMR: {fileID: -5177901332042272540, guid: 66c56dec2ea107b4dbf9b73a4fd1684d, type: 3}
 --- !u!82 &1087299447
 AudioSource:
   m_ObjectHideFlags: 0
