@@ -63,7 +63,7 @@ public class MakeRequest : MonoBehaviour
                 var completionResponse = await openai.CreateChatCompletion(new CreateChatCompletionRequest()
                 {
                     MaxTokens = 128,
-                    Model = "gpt-3.5-turbo-0613",
+                    Model = "gpt-3.5-turbo",
                     Messages = messages
                 });
                 if (completionResponse.Choices != null && completionResponse.Choices.Count > 0)
