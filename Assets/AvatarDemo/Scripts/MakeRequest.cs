@@ -7,12 +7,14 @@ using System;
 using System.Threading;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Data;
 
 public class MakeRequest : MonoBehaviour
 {
     public GameObject speak;
     public GameObject avatar;
     public TextMeshProUGUI input;
+    public float temperature = 0.5f;
 
     private List<ChatMessage> messages = new List<ChatMessage>();
 
@@ -30,6 +32,22 @@ public class MakeRequest : MonoBehaviour
         }
 
     }
+
+    public void Start()
+    {
+        var systemMessage = new ChatMessage()
+        {
+            Role = "system",
+            Content = " You are a professional team member in a business meeting room. The company you work at is the UD HCI Lab. " +
+            "You are speaking to another team member who is deaf and will conversate with you in ASL sentence structure. When asked about deadlines, make sure to state that the project is on track; ask for any extra suggestions and ideas" +
+            "If asked about the deadlines, get the current date and state the deadline is a month from the current day. Make sure to give the month and day." +
+            "If you are asked about when you are going on break, state any time from 11AM to 2PM" + 
+            "Respond to questions and contribute to discussions in a professional and frienldy manner."
+        };
+        messages.Add(systemMessage);
+    }
+
+
 
     /*
      * Makes the request to chatGPT, grabs ChatGPT's reponse, and plays it (if necessary)
@@ -64,7 +82,8 @@ public class MakeRequest : MonoBehaviour
                 {
                     MaxTokens = 128,
                     Model = "gpt-3.5-turbo",
-                    Messages = messages
+                    Messages = messages,
+                    Temperature = temperature
                 });
                 if (completionResponse.Choices != null && completionResponse.Choices.Count > 0)
                 {
