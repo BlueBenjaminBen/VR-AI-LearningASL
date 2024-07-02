@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class HandMenu : MonoBehaviour
 {
-
     [SerializeField] private GameObject menuCanvas;
 
     private GameObject head;
-    private GameObject leftHandPalm;
+    private Transform leftHandPalm;
 
-    private Vector3 dirFromAtoB = Vector3.zero;
-    private float dotProd = 0f;
+
 
     private void Start()
     {
+        // Find the head and hand game objects
         head = GameObject.Find("CenterEyeAnchor");
-        leftHandPalm = GameObject.Find("LeftHandAnchor");
+        leftHandPalm = transform.parent;
+
         menuCanvas.SetActive(false);
     }
 
@@ -24,11 +24,21 @@ public class HandMenu : MonoBehaviour
     {
         if (head != null && leftHandPalm != null)
         {
-            dirFromAtoB = (head.transform.position - leftHandPalm.transform.position).normalized;
-            dotProd = Vector3.Dot(dirFromAtoB, (-1) * leftHandPalm.transform.up);
+            //Calculate directoin from head to palm
+            Vector3 headToPalm = leftHandPalm.position - head.transform.position;
+            Vector3 headForward = head.transform.forward;
 
-            //This makes sure that the left palm is mostly looking towards the face
-            if (dotProd > 0.9)
+            //Normalize Vectors for dot product calculatoin
+            headToPalm.Normalize();
+            headForward.Normalize();
+
+            //Calculate dot product to determine alignment
+            float dotProduct = Vector3.Dot(headForward, headToPalm);
+
+            Debug.Log("Dot product: " + dotProduct);
+
+            // This makes sure that the left palm is mostly looking towards the face
+            if (dotProduct > 0.9)
             {
                 if (!menuCanvas.activeSelf)
                 {
@@ -40,6 +50,5 @@ public class HandMenu : MonoBehaviour
                 menuCanvas.SetActive(false);
             }
         }
-       
     }
 }

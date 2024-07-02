@@ -639,7 +639,7 @@ public class MivryQuestHands : MonoBehaviour
                     break;
                 // case GestureTrigger.Manual:
             }
-            Debug.Log($"this.leftGestureTriggerValue = {this.leftGestureTriggerValue}");
+            //Debug.Log($"this.leftGestureTriggerValue = {this.leftGestureTriggerValue}");
             return this.leftGestureTriggerValue >= this.leftGestureTriggerThreshold;
         }
     }
