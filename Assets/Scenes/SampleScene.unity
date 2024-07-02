@@ -864,6 +864,73 @@ RectTransform:
   m_AnchoredPosition: {x: 0.094, y: 0.118}
   m_SizeDelta: {x: 542.5714, y: 666}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1349702689
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1349702691}
+  - component: {fileID: 1349702690}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1349702690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1349702689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ead00d81e07c86d4a84ac72a78fa472a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  license_id: 
+  license_key: 
+  license_file_path: 
+  default_tracked_hand: 2
+  left_hand_tracking_points: 1
+  right_hand_tracking_points: 1
+  left_gesture_trigger: 3
+  right_gesture_trigger: 1
+  trigger_threshold: 0.8
+  unityXrPlugin: 1
+  mivryCoordinateSystem: 1
+  frameOfReference: 0
+  file_load_gestures: Samples/MyQuestHandsGestures.dat
+  file_import_gestures: Samples/Sample_MivryQuestHands_Gestures.dat
+  file_save_gestures: Samples/MyQuestHandsGestures.dat
+  create_gesture_name: (new gesture name)
+  create_gesture_names: []
+  record_combination_id: -1
+  copy_gesture_from_part: 0
+  copy_gesture_to_part: 1
+  copy_gesture_from_id: 0
+  copy_gesture_to_id: 0
+  copy_gesture_mirror: 1
+--- !u!4 &1349702691
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1349702689}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.438893, y: 2.7056556, z: 18.316885}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1361631446
 GameObject:
   m_ObjectHideFlags: 0
@@ -1631,3 +1698,4 @@ SceneRoots:
   - {fileID: 1930344390}
   - {fileID: 1309969856}
   - {fileID: 857894844}
+  - {fileID: 1349702691}
