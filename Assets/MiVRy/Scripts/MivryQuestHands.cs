@@ -46,9 +46,9 @@ public class MivryQuestHands : MonoBehaviour
     [System.Serializable]
     public enum TrackedHand
     {
-        LeftHand    = 0,
-        RightHand   = 1,
-        BothHands   = 2,
+        LeftHand = 0,
+        RightHand = 1,
+        BothHands = 2,
         _NUM_VALUES = 3
     };
 
@@ -74,7 +74,7 @@ public class MivryQuestHands : MonoBehaviour
         LeftHandGrab = 1,
         RightHandPinch = 2,
         RightHandGrab = 3,
-        Manual= 4,
+        Manual = 4,
         _NUM_VALUES = 5
     };
 
@@ -220,10 +220,10 @@ public class MivryQuestHands : MonoBehaviour
 
     private GestureCombinations gc = null; //!< The gesture combinations object used to identify the gestures.
     private GestureCompletionData data = new GestureCompletionData(); //!< Gesture data object to be passed to event listeners.
-    private int numberOfTrackingPointsLeft  = 0; //!< The number of tracked points for the left hand (if any).
+    private int numberOfTrackingPointsLeft = 0; //!< The number of tracked points for the left hand (if any).
     private int numberOfTrackingPointsRight = 0; //!< The number of tracked points for the right hand (if any).
 
-    private bool isGesturingLeft  = false; //!< Whether the left hand is currently making a gesture motion.
+    private bool isGesturingLeft = false; //!< Whether the left hand is currently making a gesture motion.
     private bool isGesturingRight = false; //!< Whether the right hand is currently making a gesture motion.
 
     private int recordGestureSample = -1; //!< Which (if any) gesture where recording a new sample for.
@@ -237,8 +237,10 @@ public class MivryQuestHands : MonoBehaviour
 
         this.leftHandSkeleton = this.leftHand.GetComponent<OVRSkeleton>();
         this.rightHandSkeleton = this.rightHand.GetComponent<OVRSkeleton>();
-        if (this.trackedHand == TrackedHand.LeftHand || this.trackedHand == TrackedHand.BothHands) {
-            switch (this.leftHandTrackingPoints) {
+        if (this.trackedHand == TrackedHand.LeftHand || this.trackedHand == TrackedHand.BothHands)
+        {
+            switch (this.leftHandTrackingPoints)
+            {
                 case TrackingPoints.AllBones:
                     this.numberOfTrackingPointsLeft = this.leftHandSkeleton.GetCurrentNumBones();
                     break;
@@ -251,8 +253,10 @@ public class MivryQuestHands : MonoBehaviour
                     break;
             }
         }
-        if (this.trackedHand == TrackedHand.RightHand || this.trackedHand == TrackedHand.BothHands) {
-            switch (this.rightHandTrackingPoints) {
+        if (this.trackedHand == TrackedHand.RightHand || this.trackedHand == TrackedHand.BothHands)
+        {
+            switch (this.rightHandTrackingPoints)
+            {
                 case TrackingPoints.AllBones:
                     this.numberOfTrackingPointsRight = this.rightHandSkeleton.GetCurrentNumBones();
                     break;
@@ -269,14 +273,19 @@ public class MivryQuestHands : MonoBehaviour
 
         // Active license if set:
         gc = new GestureCombinations(numberOfParts);
-        if (this.LicenseName != null && this.LicenseKey != null && this.LicenseName != "") {
+        if (this.LicenseName != null && this.LicenseKey != null && this.LicenseName != "")
+        {
             ret = gc.activateLicense(this.LicenseName, this.LicenseKey);
-            if (ret != 0) {
+            if (ret != 0)
+            {
                 Debug.LogError($"[MivryQuestHands] Failed to activate license: {GestureRecognition.getErrorMessage(ret)}");
             }
-        } else if (this.LicenseFilePath != null && this.LicenseFilePath.Length > 0) {
+        }
+        else if (this.LicenseFilePath != null && this.LicenseFilePath.Length > 0)
+        {
             ret = gc.activateLicenseFile(this.LicenseFilePath);
-            if (ret != 0) {
+            if (ret != 0)
+            {
                 Debug.LogError($"[MivryQuestHands] Failed to activate license: {GestureRecognition.getErrorMessage(ret)}");
             }
         }
@@ -318,13 +327,18 @@ public class MivryQuestHands : MonoBehaviour
 #endif
         GesturesFilePath = GesturesFilePath + "/" + this.GestureDatabaseFile;
         ret = this.gc.loadFromFile(GesturesFilePath);
-        if (ret != 0) {
+        if (ret != 0)
+        {
             byte[] fileContents = File.ReadAllBytes(GesturesFilePath);
-            if (fileContents == null || fileContents.Length == 0) {
+            if (fileContents == null || fileContents.Length == 0)
+            {
                 Debug.LogError($"Could not find gesture database file ({GesturesFilePath}).");
-            } else {
+            }
+            else
+            {
                 ret = gc.loadFromBuffer(fileContents);
-                if (ret != 0) {
+                if (ret != 0)
+                {
                     Debug.LogError("[MivryQuestHands] Failed to load gesture recognition database file: " + GestureRecognition.getErrorMessage(ret));
                     return;
                 }
@@ -333,22 +347,26 @@ public class MivryQuestHands : MonoBehaviour
 
         // Set the tracking points to what's described in the file's metadata
         string metadata = this.gc.getMetadataAsString();
-        if (metadata == null || metadata == "") {
+        if (metadata == null || metadata == "")
+        {
             Debug.LogWarning("[MivryQuestHands] Failed to get metadata from database file");
             return;
         }
         string[] metadata_parts = metadata.Split(' ');
-        if (metadata_parts.Length != 3 || metadata_parts[0] != "MivryQuestHands") {
+        if (metadata_parts.Length != 3 || metadata_parts[0] != "MivryQuestHands")
+        {
             Debug.LogWarning("[MivryQuestHands] Failed to parse metadata from database file");
             return;
         }
         string[] metadata_lhtp = metadata_parts[1].Split('=');
         string[] metadata_rhtp = metadata_parts[2].Split('=');
-        if (metadata_lhtp.Length != 2 || metadata_rhtp.Length != 2) {
+        if (metadata_lhtp.Length != 2 || metadata_rhtp.Length != 2)
+        {
             Debug.LogWarning("[MivryQuestHands] Failed to parse metadata from database file");
             return;
         }
-        switch (metadata_lhtp[1]) {
+        switch (metadata_lhtp[1])
+        {
             case "AllBones":
                 this.leftHandTrackingPoints = MivryQuestHands.TrackingPoints.AllBones;
                 break;
@@ -362,7 +380,8 @@ public class MivryQuestHands : MonoBehaviour
                 Debug.LogWarning("[MivryQuestHands] Failed to parse metadata from database file");
                 break;
         }
-        switch (metadata_rhtp[1]) {
+        switch (metadata_rhtp[1])
+        {
             case "AllBones":
                 this.rightHandTrackingPoints = MivryQuestHands.TrackingPoints.AllBones;
                 break;
@@ -385,22 +404,29 @@ public class MivryQuestHands : MonoBehaviour
         Vector3 p;
         Quaternion q;
 
-        if (this.trackedHand == TrackedHand.LeftHand || this.trackedHand == TrackedHand.BothHands) {
-            if (!this.isGesturingLeft) { // Not currently gesturing - check if a new gesture motion was started.
-                if (this.isLeftTriggerPressed) {
+        if (this.trackedHand == TrackedHand.LeftHand || this.trackedHand == TrackedHand.BothHands)
+        {
+            if (!this.isGesturingLeft)
+            { // Not currently gesturing - check if a new gesture motion was started.
+                if (this.isLeftTriggerPressed)
+                {
                     p = Camera.main.transform.position;
                     q = Camera.main.transform.rotation;
                     Mivry.convertHeadInput(this.mivryCoordinateSystem, ref p, ref q);
-                    for (int i = this.numberOfTrackingPointsLeft - 1; i > 0; i--) {
+                    for (int i = this.numberOfTrackingPointsLeft - 1; i > 0; i--)
+                    {
                         this.gc.startStroke(i, p, q, this.recordGestureSample);
                     }
                     this.isGesturingLeft = true;
                 }
             }
-            if (this.isGesturingLeft) { // Currently gesturing - add latest data.
-                switch (this.leftHandTrackingPoints) {
+            if (this.isGesturingLeft)
+            { // Currently gesturing - add latest data.
+                switch (this.leftHandTrackingPoints)
+                {
                     case TrackingPoints.AllBones:
-                        for (int i = this.leftHandSkeleton.GetCurrentNumBones() - 1; i >= 0; i--) {
+                        for (int i = this.leftHandSkeleton.GetCurrentNumBones() - 1; i >= 0; i--)
+                        {
                             t = leftHandSkeleton.Bones[i].Transform;
                             p = t.position;
                             q = t.rotation;
@@ -444,43 +470,53 @@ public class MivryQuestHands : MonoBehaviour
                         this.gc.contdStrokeQ(0, p, q);
                         break;
                 }
-                if (!this.isLeftTriggerPressed) {
-                    for (int i = this.numberOfTrackingPointsLeft - 1; i > 0; i--) {
+                if (!this.isLeftTriggerPressed)
+                {
+                    for (int i = this.numberOfTrackingPointsLeft - 1; i > 0; i--)
+                    {
                         this.gc.endStroke(i);
                     }
                     this.isGesturingLeft = false;
-                    if (!this.isGesturingRight) {
+                    if (!this.isGesturingRight)
+                    {
                         data.gestureID = gc.identifyGestureCombination(ref data.similarity);
                         data.gestureName = (data.gestureID >= 0)
                             ? gc.getGestureCombinationName(data.gestureID)
                             : GestureRecognition.getErrorMessage(data.gestureID);
                         OnGestureCompletion.Invoke(data);
-                        #if MIVRY_USE_BOLT
+#if MIVRY_USE_BOLT
                         CustomEvent.Trigger(this.gameObject, data.gestureName, data);
-                        #endif
+#endif
                         data.parts = new GestureCompletionData.Part[0]; // reset
                     }
                 }
             }
         }
 
-        
-        if (this.trackedHand == TrackedHand.RightHand || this.trackedHand == TrackedHand.BothHands) {
-            if (!this.isGesturingRight) { // Not currently gesturing - check if a new gesture motion was started.
-                if (this.isRightTriggerPressed) {
+
+        if (this.trackedHand == TrackedHand.RightHand || this.trackedHand == TrackedHand.BothHands)
+        {
+            if (!this.isGesturingRight)
+            { // Not currently gesturing - check if a new gesture motion was started.
+                if (this.isRightTriggerPressed)
+                {
                     p = Camera.main.transform.position;
                     q = Camera.main.transform.rotation;
                     Mivry.convertHeadInput(this.mivryCoordinateSystem, ref p, ref q);
-                    for (int i = this.numberOfTrackingPointsRight - 1; i > 0; i--) {
+                    for (int i = this.numberOfTrackingPointsRight - 1; i > 0; i--)
+                    {
                         this.gc.startStroke(i, p, q, this.recordGestureSample);
                     }
                     this.isGesturingRight = true;
                 }
             }
-            if (this.isGesturingRight) { // Currently gesturing - add latest data.
-                switch (this.rightHandTrackingPoints) {
+            if (this.isGesturingRight)
+            { // Currently gesturing - add latest data.
+                switch (this.rightHandTrackingPoints)
+                {
                     case TrackingPoints.AllBones:
-                        for (int i = this.rightHandSkeleton.GetCurrentNumBones() - 1; i >= 0; i--) {
+                        for (int i = this.rightHandSkeleton.GetCurrentNumBones() - 1; i >= 0; i--)
+                        {
                             t = rightHandSkeleton.Bones[i].Transform;
                             p = t.position;
                             q = t.rotation;
@@ -524,20 +560,23 @@ public class MivryQuestHands : MonoBehaviour
                         this.gc.contdStrokeQ(0, p, q);
                         break;
                 }
-                if (!this.isRightTriggerPressed) {
-                    for (int i = this.numberOfTrackingPointsRight - 1; i > 0; i--) {
+                if (!this.isRightTriggerPressed)
+                {
+                    for (int i = this.numberOfTrackingPointsRight - 1; i > 0; i--)
+                    {
                         this.gc.endStroke(i);
                     }
                     this.isGesturingRight = false;
-                    if (!this.isGesturingLeft) {
+                    if (!this.isGesturingLeft)
+                    {
                         data.gestureID = gc.identifyGestureCombination(ref data.similarity);
                         data.gestureName = (data.gestureID >= 0)
                             ? gc.getGestureCombinationName(data.gestureID)
                             : GestureRecognition.getErrorMessage(data.gestureID);
                         OnGestureCompletion.Invoke(data);
-                        #if MIVRY_USE_BOLT
+#if MIVRY_USE_BOLT
                         CustomEvent.Trigger(this.gameObject, data.gestureName, data);
-                        #endif
+#endif
                         data.parts = new GestureCompletionData.Part[0]; // reset
                     }
                 }
@@ -549,9 +588,10 @@ public class MivryQuestHands : MonoBehaviour
 
     public static int[] getTrackingPointsIndices(TrackingPoints trackingPoints)
     {
-        switch (trackingPoints) {
+        switch (trackingPoints)
+        {
             case TrackingPoints.AllBones:
-                return new int[24] {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23};
+                return new int[24] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23 };
             case TrackingPoints.AllFingerTips:
                 return new int[5] {
                     (int)OVRSkeleton.BoneId.Hand_ThumbTip,
@@ -570,7 +610,8 @@ public class MivryQuestHands : MonoBehaviour
 
     public static float getGrabStrength(OVRSkeleton handSkeleton)
     {
-        if (handSkeleton?.Bones?.Count <= (int)OVRSkeleton.BoneId.Hand_Pinky2) {
+        if (handSkeleton?.Bones?.Count <= (int)OVRSkeleton.BoneId.Hand_Pinky2)
+        {
             return 0.0f;
         }
         float minStrength = 1.0f;
@@ -579,7 +620,7 @@ public class MivryQuestHands : MonoBehaviour
             wristRotation,
             handSkeleton.Bones[(int)OVRSkeleton.BoneId.Hand_Index2].Transform.rotation
         );
-        float indexStrength = Mathf.Clamp((indexBend - 80.0f) / 100.0f,  0, 1);
+        float indexStrength = Mathf.Clamp((indexBend - 80.0f) / 100.0f, 0, 1);
         minStrength = Mathf.Min(minStrength, indexStrength);
         float middleBend = Quaternion.Angle(
             wristRotation,
@@ -604,7 +645,8 @@ public class MivryQuestHands : MonoBehaviour
 
     public static float getTriggerValue(GestureTrigger trigger, OVRHand leftHand, OVRHand rightHand)
     {
-        switch (trigger) {
+        switch (trigger)
+        {
             case GestureTrigger.LeftHandPinch:
                 return leftHand.GetFingerPinchStrength(OVRHand.HandFinger.Index);
             case GestureTrigger.LeftHandGrab:
@@ -613,7 +655,7 @@ public class MivryQuestHands : MonoBehaviour
                 return rightHand.GetFingerPinchStrength(OVRHand.HandFinger.Index);
             case GestureTrigger.RightHandGrab:
                 return getGrabStrength(rightHand.GetComponent<OVRSkeleton>());
-            // case GestureTrigger.Manual:
+                // case GestureTrigger.Manual:
         }
         return 0.0f;
     }
@@ -623,8 +665,10 @@ public class MivryQuestHands : MonoBehaviour
     /// </summary>
     private bool isLeftTriggerPressed
     {
-        get {
-            switch (this.leftGestureTrigger) {
+        get
+        {
+            switch (this.leftGestureTrigger)
+            {
                 case GestureTrigger.LeftHandPinch:
                     this.leftGestureTriggerValue = this.leftHand.GetFingerPinchStrength(OVRHand.HandFinger.Index);
                     break;
@@ -637,7 +681,7 @@ public class MivryQuestHands : MonoBehaviour
                 case GestureTrigger.RightHandGrab:
                     this.leftGestureTriggerValue = getGrabStrength(rightHand.GetComponent<OVRSkeleton>());
                     break;
-                // case GestureTrigger.Manual:
+                    // case GestureTrigger.Manual:
             }
             //Debug.Log($"this.leftGestureTriggerValue = {this.leftGestureTriggerValue}");
             return this.leftGestureTriggerValue >= this.leftGestureTriggerThreshold;
@@ -651,7 +695,8 @@ public class MivryQuestHands : MonoBehaviour
     {
         get
         {
-            switch (this.rightGestureTrigger) {
+            switch (this.rightGestureTrigger)
+            {
                 case GestureTrigger.LeftHandPinch:
                     this.rightGestureTriggerValue = this.leftHand.GetFingerPinchStrength(OVRHand.HandFinger.Index);
                     break;
