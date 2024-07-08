@@ -35,7 +35,6 @@ public class HandMenu : MonoBehaviour
             //Calculate dot product to determine alignment
             float dotProduct = Vector3.Dot(headForward, headToPalm);
 
-            Debug.Log("Dot product: " + dotProduct);
 
             // This makes sure that the left palm is mostly looking towards the face
             if (dotProduct > 0.9)

@@ -22,13 +22,23 @@ public class GestureHandler : MonoBehaviour
     
     public void StartGestureRecording()
     {
-        gestureManager.leftGestureTriggerValue = 1.0f;
-        gestureManager.rightGestureTriggerValue = 1.0f;
+        if (gestureManager != null)
+        {
+            gestureManager.leftGestureTriggerValue = 1.0f;
+        }
+        else
+        {
+            Debug.Log("gesture manager null");
+        }
     }
     public void StopGestureRecording()
     {
-        gestureManager.leftGestureTriggerValue = 0.0f;
-        gestureManager.rightGestureTriggerValue = 0.0f;
+        if (gestureManager != null)
+        {
+            gestureManager.leftGestureTriggerValue = 0.0f;
+            gestureManager.rightGestureTriggerValue = 0.0f;
+        }
+        
     }
     private IEnumerator StartTimedRecording(float duration)
     {
@@ -52,17 +62,22 @@ public class GestureHandler : MonoBehaviour
     {
         gestureToWordMap = new Dictionary<int, string>
         {
-            {0, "hello" }
+            {0, "hello" },
+            {1, "a" }
         };
 
         if (recordButton != null)
         {
             recordButton.onClick.AddListener(OnButtonClick);
         }
+        if (gestureManager != null)
+        {
+            gestureManager.OnGestureCompletion.AddListener(OnGestureCompleted);
+        }
     }
     public void OnGestureCompleted(GestureCompletionData data)
     {
-        int gestureID = data.gestureID + 1;
+        int gestureID = data.gestureID;
         Debug.Log(gestureID);
 
         //Check if gesture ID exists in the dictionary
@@ -79,6 +94,10 @@ public class GestureHandler : MonoBehaviour
                 word = char.ToUpper(word[0]) + word.Substring(1);
                 m_InputField.text = word;
             }
+        }
+        else
+        {
+            Debug.Log("No gesture detected");
         }
     }
 }
