@@ -81,4 +81,4 @@ bfg-1.13.0.jar
 
 #Ignore side project scene, delete later
 /Assets/Scenes/PictureScene.unity
-/Assets/Scenes/ExampleScene.unity.meta
+/Assets/Scenes/PictureScene.unity.meta
