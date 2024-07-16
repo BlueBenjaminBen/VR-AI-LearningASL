@@ -76,6 +76,4 @@ VR-AI-LearningASL.git.bfg-report/
 # Ignore the bare repository created for BFG Repo-Cleaner
 VR-AI-LearningASL.git/
 
-# Ignore the BFG Repo-Cleaner jar file
-bfg-1.13.0.jar
 
