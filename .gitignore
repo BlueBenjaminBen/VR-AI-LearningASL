@@ -79,3 +79,6 @@ VR-AI-LearningASL.git/
 # Ignore the BFG Repo-Cleaner jar file
 bfg-1.13.0.jar
 
+#Ignore side project scene, delete later
+/Assets/Scenes/PictureScene.unity
+/Assets/Scenes/ExampleScene.unity.meta
