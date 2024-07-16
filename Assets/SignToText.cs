@@ -4,12 +4,12 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GestureHandler : MonoBehaviour
+public class SignToText : MonoBehaviour
 {
 
     [SerializeField]
     [Tooltip("The TMP_InputField to append text to.")]
-    TMP_InputField m_InputField;
+    TMP_InputField inputField;
 
     public void OnGestureCompleted(GestureCompletionData data)
     {
@@ -19,15 +19,22 @@ public class GestureHandler : MonoBehaviour
         if (gestureID >=0)
         {
             //If first letter, uppercase
-            if (m_InputField.text == null)
+            if (string.IsNullOrEmpty(inputField.text))
             {
                 char upperChar = char.ToUpper(gestureChar);
-                m_InputField.text += upperChar;
+                inputField.text = upperChar.ToString();
             }
             else
             {
-                m_InputField.text += gestureChar;
+                inputField.text += gestureChar;
             }
+            //Set caret position to the end of the text
+            inputField.caretPosition = inputField.text.Length;
+            inputField.Select();
+        }
+        else
+        {
+            Debug.LogError("Gesture Not Found!");
         }
     }
 }
