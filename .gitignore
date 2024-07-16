@@ -1,5 +1,6 @@
 VRConfRoom\Temp\UnityLockfileTemp/
 [Ll]ibrary/
+Library/
 [Tt]emp/
 [Oo]bj/
 [Bb]uild/
@@ -68,6 +69,7 @@ crashlytics-build.properties
 [Aa]ssets/[Ss]treamingAssets/aa.meta
 [Aa]ssets/[Ss]treamingAssets/aa/*
 
+
 # Ignore BFG Repo-Cleaner report directory
 VR-AI-LearningASL.git.bfg-report/
 
@@ -76,3 +78,4 @@ VR-AI-LearningASL.git/
 
 # Ignore the BFG Repo-Cleaner jar file
 bfg-1.13.0.jar
+
