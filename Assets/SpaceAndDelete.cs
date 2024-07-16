@@ -32,7 +32,7 @@ public class SpaceAndDelete : MonoBehaviour
         {
             insertSpace();
             canPressSpace = false;
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.5f);
             canPressSpace = true;
         } 
     }
@@ -58,7 +58,7 @@ public class SpaceAndDelete : MonoBehaviour
         {
             deleteChar();
             canPressDelete = false;
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.5f);
             canPressDelete = true;
         }
     }
