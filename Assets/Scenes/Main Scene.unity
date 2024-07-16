@@ -385,7 +385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0343dc41e94683c4b860c3aee18430c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gestureManager: {fileID: 1407387121}
+  gestureManager: {fileID: 0}
   m_InputField: {fileID: 733022652626916747}
   recordButton: {fileID: 513737531}
   recordingDuration: 2.5
@@ -3559,13 +3559,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1407387119}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bdf6697bb6cf9944699521a2fa7daa3e, type: 3}
+  m_Script: {fileID: 11500000, guid: 2b446cc5a68eeca40b6be0763f676f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   LicenseName: REDACTED
   LicenseKey:  REDACTED
   LicenseFilePath: 
-  GestureDatabaseFile: Samples/MyQuestHandsGestures.dat
+  GestureDatabaseFile: Samples/ASLGesture.dat
   trackedHand: 0
   leftHand: {fileID: 2007730288}
   leftHandTrackingPoints: 1
@@ -3574,7 +3574,7 @@ MonoBehaviour:
   leftGestureTriggerValue: 0
   rightHand: {fileID: 1914027939}
   rightHandTrackingPoints: 1
-  rightGestureTrigger: 1
+  rightGestureTrigger: 4
   rightGestureTriggerThreshold: 0.5
   rightGestureTriggerValue: 0
   OnGestureCompletion:

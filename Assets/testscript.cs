@@ -11,6 +11,7 @@ public class testscript : MonoBehaviour
         {
             Debug.Log(data.gestureID);
             Debug.Log("Gesture Found ID: " +  data.gestureID);
+            Debug.Log(data.gestureName);
         }
         else
         {
