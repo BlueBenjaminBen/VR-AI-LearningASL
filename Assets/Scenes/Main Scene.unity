@@ -3814,7 +3814,7 @@ MonoBehaviour:
   trackedHand: 0
   leftHand: {fileID: 2007730288}
   leftHandTrackingPoints: 1
-  leftGestureTrigger: 3
+  leftGestureTrigger: 2
   leftGestureTriggerThreshold: 0.5
   leftGestureTriggerValue: 0
   rightHand: {fileID: 1914027939}
