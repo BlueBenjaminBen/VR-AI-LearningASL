@@ -35,4 +35,8 @@ The letters that have been changed are:
 
 Some letters also to differ slightly in anlge and where your hand is facing to mitigate the detection of a unintended letter and will be acknowledged and shown in the video.
 
+
+
+If you have any questions, feel free to reach me at benle@udel.edu
+
 Thank you for checking out my project and I hope you enjoy it!
