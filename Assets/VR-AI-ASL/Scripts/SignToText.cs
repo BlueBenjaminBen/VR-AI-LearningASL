@@ -11,12 +11,13 @@ public class SignToText : MonoBehaviour
     [Tooltip("The TMP_InputField to append text to.")]
     TMP_InputField inputField;
 
+    //Runs whenever a gesture is completed (whenever the gesture trigger passes the threshold and leaves it)
     public void OnGestureCompleted(GestureCompletionData data)
     {
-        int gestureID = data.gestureID;
+        int gestureID = data.gestureID;     
         string gestureName = data.gestureName;
-        char gestureChar = gestureName[0];
-        if (gestureID >=0)
+        char gestureChar = gestureName[0];  //Gets the first character of the gesture name in the ASLGesture.dat database
+        if (gestureID >=0)                  //Checks if gestureID is non-negative; non-negative integer represent an error.
         {
             //If first letter, uppercase
             if (string.IsNullOrEmpty(inputField.text))

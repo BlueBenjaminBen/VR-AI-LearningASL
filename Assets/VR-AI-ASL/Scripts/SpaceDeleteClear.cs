@@ -29,7 +29,7 @@ public class SpaceDeleteClear : MonoBehaviour
         ClearButton.onClick.AddListener(clearText);
     }
     
-    //Time between being able to press the space again to avoid accidental presses
+    //Time between being able to press the space again to mitigate accidental presses
     private IEnumerator SpaceCooldown()
     {
         if (canPressSpace)
@@ -55,7 +55,7 @@ public class SpaceDeleteClear : MonoBehaviour
             inputField.caretPosition =inputField.text.Length; 
         }
     }
-    //Time between being able to press the backspace again to avoid accidental presses
+    //Time between being able to press the backspace again to mitigate accidental presses
     private IEnumerator DeleteCooldown()
     {
         if (canPressDelete)
@@ -67,6 +67,7 @@ public class SpaceDeleteClear : MonoBehaviour
         }
     }
 
+    //Clears text
     private void clearText()
     {
         if(inputField != null)

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+/*This script is just for the spheres in the fingertips of both hands and to ensure that they are able to collide and trigger the buttons */
 public class HandInput : MonoBehaviour
 {
     public LayerMask uiLayerMask;
