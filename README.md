@@ -13,8 +13,7 @@ Special thanks to Gavin Caulfield for providing the room and avatar AI functiona
 * In the unity hub application, click the dropdown arrow next to the add button and press, “Add project from disk”. Navigate to where you cloned the project and open it.
 
 # Usage and Controls
-When starting the "Main Scene", there will be an input field in front of you and to input text you must sign the word letter by letter. To do this, there is a **recording trigger in the right hand** and to activate it, simply pinch with your
-**thumb and index finger**. Letting go will stop the recording of the gestures in the left hand. 
+When starting the "Main Scene", there will be an input field in front of you and to input text you must sign the word letter by letter. To do this, there is a **recording trigger in the right hand** and to activate it, simply **pinch with your thumb and index finger**. Letting go will stop the recording of the gestures in the left hand. 
 
 Currently it is only possible to sign with the left hand. If you wanted to change the gesture trigger action from the pinch to a grab that will be outlined in a future video as well as more details on the customization 
 of the scene and functionality.
@@ -35,7 +34,11 @@ The letters that have been changed are:
 
 Some letters also to differ slightly in anlge and where your hand is facing to mitigate the detection of a unintended letter and will be acknowledged and shown in the video.
 
+# References
 
+The avatar models used in this project were using the [VALID Validated Avatar Library](https://github.com/google/valid-avatar-library). 
+
+---
 
 If you have any questions, feel free to reach me at benle@udel.edu
 
