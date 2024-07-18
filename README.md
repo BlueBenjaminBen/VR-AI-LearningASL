@@ -32,6 +32,7 @@ The letters that have been changed are:
 * N
 * P
 * R
+
 Some letters also to differ slightly in anlge and where your hand is facing to mitigate the detection of a unintended letter and will be acknowledged and shown in the video.
 
 Thank you for checking out my project and I hope you enjoy it!
