@@ -20,7 +20,7 @@ Currently it is only possible to sign with the left hand. If you wanted to chang
 of the scene and functionality.
 
 
-# VR-AI-Learning Demo
+# VR-AI-Learning Scene Demo
 
 
 # Letter Signing Demo
