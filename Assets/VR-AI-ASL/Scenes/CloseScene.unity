@@ -5145,7 +5145,7 @@ PrefabInstance:
     - target: {fileID: 8251684787338056350, guid: ccfa25324667ce14f929033e999c1151, type: 3}
       propertyPath: speak
       value: 
-      objectReference: {fileID: 2012002336}
+      objectReference: {fileID: 1393996839}
     - target: {fileID: 8251684787338056350, guid: ccfa25324667ce14f929033e999c1151, type: 3}
       propertyPath: avatar
       value: 
@@ -5183,6 +5183,11 @@ PrefabInstance:
 --- !u!4 &1393996838 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5266918438173394845, guid: ccfa25324667ce14f929033e999c1151, type: 3}
+  m_PrefabInstance: {fileID: 1393996837}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1393996839 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3475427173971730178, guid: ccfa25324667ce14f929033e999c1151, type: 3}
   m_PrefabInstance: {fileID: 1393996837}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1394939305
