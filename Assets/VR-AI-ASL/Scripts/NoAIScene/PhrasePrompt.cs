@@ -113,10 +113,16 @@ public class PhrasePrompt : MonoBehaviour
     }
 
 
-    public void OnSpacePressed() {
-        ProcessLetter(' ');
+    public void OnSpacePressed()
+    {
+        string currentPhrase = phrases[currentPhraseIndex];
+        if (currentLetterIndex < currentPhrase.Length)
+        {
+            ProcessLetter(' ');
+        }
     }
 
+    //Takes in the gestured letter and compares it to the current indexed letter of the phrase. 
     private void ProcessLetter(char letter)
     {
         string currentPhrase = phrases[currentPhraseIndex];
