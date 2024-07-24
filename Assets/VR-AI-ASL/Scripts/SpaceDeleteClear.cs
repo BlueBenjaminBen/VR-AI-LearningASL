@@ -24,8 +24,8 @@ public class SpaceDeleteClear : MonoBehaviour
     void Start()
     {
         //Links buttons to their methods
-        SpaceBar.onClick.AddListener(insertSpace);
-        BackSpace.onClick.AddListener(deleteChar);
+        SpaceBar.onClick.AddListener(() => StartCoroutine(SpaceCooldown()));
+        BackSpace.onClick.AddListener(() => StartCoroutine(DeleteCooldown()));
         ClearButton.onClick.AddListener(clearText);
     }
     
@@ -36,7 +36,7 @@ public class SpaceDeleteClear : MonoBehaviour
         {
             insertSpace();
             canPressSpace = false;
-            yield return new WaitForSeconds(1.0f);
+            yield return new WaitForSeconds(0.5f);
             canPressSpace = true;
         } 
     }
@@ -62,7 +62,7 @@ public class SpaceDeleteClear : MonoBehaviour
         {
             deleteChar();
             canPressDelete = false;
-            yield return new WaitForSeconds(1.0f);
+            yield return new WaitForSeconds(0.5f);
             canPressDelete = true;
         }
     }

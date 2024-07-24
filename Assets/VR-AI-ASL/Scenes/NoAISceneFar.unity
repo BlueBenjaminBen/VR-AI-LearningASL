@@ -2342,7 +2342,7 @@ MonoBehaviour:
   leftHand: {fileID: 171049689}
   leftHandTrackingPoints: 1
   leftGestureTrigger: 2
-  leftGestureTriggerThreshold: 1
+  leftGestureTriggerThreshold: 0.8
   leftGestureTriggerValue: 0
   rightHand: {fileID: 890489427}
   rightHandTrackingPoints: 1
