@@ -8,13 +8,16 @@ using System.Threading;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Data;
+using UnityEngine.UI;
 
 public class MakeRequest : MonoBehaviour
 {
     public GameObject speak;
     public GameObject avatar;
     public TextMeshProUGUI input;
+    public Button enterButton;
     public float temperature = 0.5f;
+    public float coolDownTime = 3.0f;
 
     private List<ChatMessage> messages = new List<ChatMessage>();
 
@@ -33,8 +36,22 @@ public class MakeRequest : MonoBehaviour
 
     }
 
+    private IEnumerator CooldownCoroutine()
+    {
+        enterButton.interactable = false;
+        yield return new WaitForSeconds(coolDownTime);
+        enterButton.interactable = true;
+    }
+
+    private void OnEnterButtonClick()
+    {
+        StartCoroutine(CooldownCoroutine());
+        RequestTask();
+    }
+
     public void Start()
     {
+        enterButton.onClick.AddListener(OnEnterButtonClick);
         string initialPrompt = "You are a team member in a meeting room for a weekly meeting and you are doing research at the UD HCI Lab " +
             "Your name is Logan and you are a senior in college" + "You are speaking to another team member whom you are trying to get to know better. " +
             "Make sure to start off with this greeting: 'Hello!, nice to meet you! My name is Logan. What is your name?" +

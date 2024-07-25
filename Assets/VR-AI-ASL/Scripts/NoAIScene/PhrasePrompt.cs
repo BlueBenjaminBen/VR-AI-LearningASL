@@ -25,11 +25,11 @@ public class PhrasePrompt : MonoBehaviour
     private List<string> phrases = new List<string>
     {
         "Hello how are you",
-        "Im doing very good",
         "My name is jay",
+        "Im doing very good",
         "Im currently at ud",
         "I love football go birdz",
-        "Quick joke next"
+        "Do you eat squid"
     };
 
     private int currentPhraseIndex = 0;
