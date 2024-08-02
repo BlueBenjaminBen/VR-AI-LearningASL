@@ -2,7 +2,7 @@
 This project aims to leverage VR and AI to create an immersive environment that fosters natural dialogue and interaction with an AI avatar. The goal is to increase the retention rate of learning the ASL alphabet.
 This has project has been built on Andriod and has only been used and tested using the Quest 1. It would most likley work with the Quest 2. 
 
-Special thanks to Gavin Caulfield for providing the room and avatar AI functionality.
+Special thanks to Gavin Caulfield for providing the Conference Room and avatar AI functionality.
 
 # Installation
 
@@ -11,6 +11,7 @@ Special thanks to Gavin Caulfield for providing the room and avatar AI functiona
 * Copy the project URL: https://github.com/BlueBenjaminBen/VR-AI-LearningASL.git
 * In your system’s terminal, type “git clone https://github.com/BlueBenjaminBen/VR-AI-LearningASL.git ”
 * In the unity hub application, click the dropdown arrow next to the add button and press, “Add project from disk”. Navigate to where you cloned the project and open it.
+* When you first open the project, it will ask you if you want to update a certain file because it is referring to an old API, we won't be using it, so just press "No".
 
 # Usage and Controls
 When starting the "Main Scene", there will be an input field in front of you and to input text you must sign the word letter by letter. To do this, there is a **recording trigger in the right hand** and to activate it, simply **pinch with your thumb and index finger**. Letting go will stop the recording of the gestures in the left hand. 
