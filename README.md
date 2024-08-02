@@ -21,9 +21,6 @@ of the scene and functionality.
 
 
 # VR-AI-Learning Scene Demo
-
-
-# Letter Signing Demo
 Some letters of the ASL alphabet are modified and do not follow what the actual gesture sign is for the letters due to the limitations of the Quest hand tracking. For example, the letter R, the quest is unable to detect
 the index finger and middle finger being intertwined and thus I had to create a different gesture to represent those letters. 
 
