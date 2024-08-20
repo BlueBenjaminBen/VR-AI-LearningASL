@@ -3857,8 +3857,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b446cc5a68eeca40b6be0763f676f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LicenseName: REDACTED
-  LicenseKey:  REDACTED
+  LicenseName: 
+  LicenseKey: 
   LicenseFilePath: 
   GestureDatabaseFile: Samples/ASLGesture.dat
   trackedHand: 0
@@ -6874,5 +6874,5 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 705507995}
-  - {fileID: 1393996837}
   - {fileID: 534501552}
+  - {fileID: 1393996837}
