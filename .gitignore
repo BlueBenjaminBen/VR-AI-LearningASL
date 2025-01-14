@@ -76,6 +76,9 @@ auth.json
 # Ignore BFG Repo-Cleaner report directory
 VR-AI-LearningASL.git.bfg-report/
 
+#Ignore Hand Gesture Data
+ASLGesture.dat
+
 # Ignore the bare repository created for BFG Repo-Cleaner
 VR-AI-LearningASL.git/
 
