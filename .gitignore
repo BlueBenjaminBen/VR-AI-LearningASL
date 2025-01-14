@@ -77,8 +77,8 @@ auth.json
 VR-AI-LearningASL.git.bfg-report/
 
 #Ignore Hand Gesture Data
-ASLGesture.dat
-ASLGesture.dat.meta
+[Aa]ssets/[Ss]treamingAssets/[Ss]amples/ASLGesture.dat
+[Aa]ssets/[Ss]treamingAssets/[Ss]amples/ASLGesture.dat.meta
 
 # Ignore the bare repository created for BFG Repo-Cleaner
 VR-AI-LearningASL.git/
