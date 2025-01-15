@@ -1245,7 +1245,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 265779106}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -7.5}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1253,7 +1253,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0}
+  m_AnchoredPosition: {x: -0, y: -0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &265779108
@@ -1288,7 +1288,7 @@ BoxCollider:
   m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 120.4, y: 33, z: 18.06}
+  m_Size: {x: 120.4, y: 32.33, z: 5.67}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &297567243
 GameObject:
@@ -1950,7 +1950,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 414180816}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2065928119}
+        m_TargetAssemblyTypeName: MakeRequest, Assembly-CSharp
+        m_MethodName: RequestTask
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &414180816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4796,6 +4808,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: --- FUNCTIONALITY ---
       objectReference: {fileID: 0}
+    - target: {fileID: 3593957190819788384, guid: ccfa25324667ce14f929033e999c1151, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 5171371448771353063, guid: ccfa25324667ce14f929033e999c1151, type: 3}
       propertyPath: Avatar
       value: 
@@ -4858,8 +4874,12 @@ PrefabInstance:
       objectReference: {fileID: 414180815}
     - target: {fileID: 8251684787338056350, guid: ccfa25324667ce14f929033e999c1151, type: 3}
       propertyPath: coolDownTime
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 8251684787338056350, guid: ccfa25324667ce14f929033e999c1151, type: 3}
+      propertyPath: fingerTipSphere
+      value: 
+      objectReference: {fileID: 1685025390}
     - target: {fileID: 8882719821781105144, guid: ccfa25324667ce14f929033e999c1151, type: 3}
       propertyPath: avatar
       value: 
@@ -6570,7 +6590,6 @@ GameObject:
   - component: {fileID: 1942733616}
   - component: {fileID: 1942733614}
   - component: {fileID: 1942733613}
-  - component: {fileID: 1942733615}
   m_Layer: 15
   m_Name: ClearButton
   m_TagString: Untagged
@@ -6652,27 +6671,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!65 &1942733615
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1942733612}
-  m_Material: {fileID: 13400000, guid: abae4e0c7317606409d6d4083f78733e, type: 2}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 32768
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 1
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!222 &1942733616
 CanvasRenderer:
   m_ObjectHideFlags: 0
