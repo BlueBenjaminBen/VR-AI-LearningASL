@@ -12,7 +12,7 @@ Special thanks to Gavin Caulfield for providing the Conference Room and avatar A
 * In your system’s terminal, type “git clone https://github.com/BlueBenjaminBen/VR-AI-LearningASL.git ”
 * In the unity hub application, click the dropdown arrow next to the add button and press, “Add project from disk”. Navigate to where you cloned the project and open it.
 * When you first open the project, it will ask you if you want to update a certain file because it is referring to an old API, we won't be using it, so just press "No".
-* Download this file and put it in the ./StreamingAssets/Samples folder: [ASL Gesture Data](https://drive.google.com/drive/folders/1-TeciPriGTEGPImztHlW43cZbBcWIXWA?usp=sharing)
+* Download this file and put it in the Assets/StreamingAssets/Samples folder: [ASL Gesture Data](https://drive.google.com/drive/folders/1-TeciPriGTEGPImztHlW43cZbBcWIXWA?usp=sharing)
 
 # Usage and Controls
 When starting the "Main Scene", there will be an input field in front of you and to input text you must sign the word letter by letter. To do this, there is a **recording trigger in the right hand** and to activate it, simply **pinch with your thumb and index finger**. Letting go will stop the recording of the gestures in the left hand. 
