@@ -21,7 +21,7 @@ Currently it is only possible to sign with the left hand. If you wanted to chang
 of the scene and functionality.
 
 
-# VR-AI-Learning Scene Demo
+# Demo Videos
 Some letters of the ASL alphabet are modified and do not follow what the actual gesture sign is for the letters due to the limitations of the Quest hand tracking. For example, the letter R, the quest is unable to detect
 the index finger and middle finger being intertwined and thus I had to create a different gesture to represent those letters. 
 
@@ -31,7 +31,9 @@ The letters that have been changed are:
 * P
 * R
 
-Some letters also to differ slightly in anlge and where your hand is facing to mitigate the detection of a unintended letter and will be acknowledged and shown in the video.
+[VR/AI ASL Demo Video](https://youtu.be/WMlOBTS5Tw8?si=o35wmjqqKxfG4pmj)
+
+[ASL Alphabet Gesture Guide](https://youtu.be/jr-FCjPemKg?si=QgOVuppyFOupgZEW)
 
 # References
 
