@@ -73,6 +73,11 @@ crashlytics-build.properties
 auth.json
 .openai/auth.json
 
+#Ignore Side project assets
+[Aa]ssets/[Vv]R-AI-ASL/SideProjectStuff
+[Aa]ssets/[Vv]R-AI-ASL/Scenes/PhotoScene.unity
+[Aa]ssets/[Vv]R-AI-ASL/Scenes/PhotoScene.unity.meta
+
 # Ignore BFG Repo-Cleaner report directory
 VR-AI-LearningASL.git.bfg-report/
 
