@@ -55,7 +55,6 @@ public class SpeechManager : MonoBehaviour {
     {
         // Attempt to load API secrets
         SecretHelper.LoadSecrets(this);
-
         if (audioSource == null)
         {
             audioSource = GetComponent<AudioSource>();
