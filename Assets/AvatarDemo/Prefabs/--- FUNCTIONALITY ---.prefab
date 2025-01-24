@@ -196,3 +196,7 @@ MonoBehaviour:
   speak: {fileID: 3475427173971730178}
   avatar: {fileID: 0}
   input: {fileID: 0}
+  enterButton: {fileID: 0}
+  fingerTipSphere: {fileID: 0}
+  temperature: 0.5
+  coolDownTime: 5
