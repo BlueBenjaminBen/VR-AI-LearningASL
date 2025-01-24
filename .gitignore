@@ -77,6 +77,7 @@ auth.json
 [Aa]ssets/[Vv]R-AI-ASL/SideProjectStuff
 [Aa]ssets/[Vv]R-AI-ASL/Scenes/PhotoScene.unity
 [Aa]ssets/[Vv]R-AI-ASL/Scenes/PhotoScene.unity.meta
+[Aa]ssets/[Vv]R-AI-ASL/[Ss]ideProjectStuff.meta
 
 # Ignore BFG Repo-Cleaner report directory
 VR-AI-LearningASL.git.bfg-report/
@@ -84,6 +85,13 @@ VR-AI-LearningASL.git.bfg-report/
 #Ignore Hand Gesture Data
 [Aa]ssets/[Ss]treamingAssets/[Ss]amples/ASLGesture.dat
 [Aa]ssets/[Ss]treamingAssets/[Ss]amples/ASLGesture.dat.meta
+
+#Ignore AvatarDemo
+[Aa]ssets/[Aa]vatarDemo/[Ss]cenes/
+[Aa]ssets/[Aa]vatarDemo/[Tt]ext to Speech/[Ss]cenes/
+
+#Ignore Oculus Voice
+[Aa]ssets/[Oo]culus/[Vv]oice/
 
 # Ignore the bare repository created for BFG Repo-Cleaner
 VR-AI-LearningASL.git/
