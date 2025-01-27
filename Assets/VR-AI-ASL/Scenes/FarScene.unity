@@ -199,7 +199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropdown: {fileID: 44211039}
-  STT: {fileID: 1114645149}
+  STT: {fileID: 0}
 --- !u!114 &44211039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -437,7 +437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36570451938460343b63a4d79bfe0fd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  STT: {fileID: 1114645148}
+  STT: {fileID: 0}
   avatar: {fileID: 99286500}
   audioSource: {fileID: 99286502}
   SMR: {fileID: 99286499}
@@ -914,7 +914,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36570451938460343b63a4d79bfe0fd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  STT: {fileID: 1114645148}
+  STT: {fileID: 0}
   avatar: {fileID: 221289795}
   audioSource: {fileID: 221289798}
   SMR: {fileID: 221289794}
@@ -1501,7 +1501,7 @@ PrefabInstance:
     - target: {fileID: 2461231619524818995, guid: dbeb5a30189cf06408df6cf51956b6be, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1114645149}
+      objectReference: {fileID: 0}
     - target: {fileID: 2461231619524818995, guid: dbeb5a30189cf06408df6cf51956b6be, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: StartRecording
@@ -1561,11 +1561,11 @@ PrefabInstance:
     - target: {fileID: 7452229039892891371, guid: dbeb5a30189cf06408df6cf51956b6be, type: 3}
       propertyPath: STT
       value: 
-      objectReference: {fileID: 1114645149}
+      objectReference: {fileID: 0}
     - target: {fileID: 7848471394521304090, guid: dbeb5a30189cf06408df6cf51956b6be, type: 3}
       propertyPath: STT
       value: 
-      objectReference: {fileID: 1114645148}
+      objectReference: {fileID: 0}
     - target: {fileID: 8190886760101084622, guid: dbeb5a30189cf06408df6cf51956b6be, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -2787,22 +2787,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!1 &1114645148 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2281798640349785333, guid: ccfa25324667ce14f929033e999c1151, type: 3}
-  m_PrefabInstance: {fileID: 1393996837}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1114645149 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5171371448771353063, guid: ccfa25324667ce14f929033e999c1151, type: 3}
-  m_PrefabInstance: {fileID: 1393996837}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1114645148}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a50c06d6aa656da4a97fe6e4669896bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1198705278
 GameObject:
   m_ObjectHideFlags: 0
@@ -3571,7 +3555,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2281798640349785333, guid: ccfa25324667ce14f929033e999c1151, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5266918438173394845, guid: ccfa25324667ce14f929033e999c1151, type: 3}
       insertIndex: -1
@@ -3818,8 +3803,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b446cc5a68eeca40b6be0763f676f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LicenseName: 
-  LicenseKey: 
+  LicenseName: barmaki86@gmail.com_3PTxW9VA3zQ46A1IQUp7KSYp
+  LicenseKey: db1fde0076f876e28978ec5803f13135f898a75b62d339bae88c5d5e0bbbf757
   LicenseFilePath: 
   GestureDatabaseFile: Samples/ASLGesture.dat
   trackedHand: 0
@@ -5500,7 +5485,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36570451938460343b63a4d79bfe0fd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  STT: {fileID: 1114645148}
+  STT: {fileID: 0}
   avatar: {fileID: 2012002336}
   audioSource: {fileID: 2012002339}
   SMR: {fileID: 2012002335}
@@ -5685,7 +5670,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1114645149}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Samples.Whisper.Whisper, Assembly-CSharp
         m_MethodName: StartRecording
         m_Mode: 1
